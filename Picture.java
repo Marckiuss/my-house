@@ -15,7 +15,7 @@ public class Picture
     private Square window;
     private Triangle roof;
     private Circle sun;
-    private Square wall1;
+    private Square grass;
 
     /**
      * Constructor for objects of class Picture
@@ -25,6 +25,23 @@ public class Picture
         // nothing to do... instance variables are automatically set to null
     }
 
+    /**
+     * El sol baja rollo atardecer
+     */
+    public void atardecer()
+    {
+        if (sun != null)
+        {sun.slowMoveVertical(190);
+        grass = new Square();
+        grass.moveHorizontal(-500);
+        grass.moveVertical(130);
+        grass.changeSize(120);
+        grass.changeColor("green");
+        grass.changeSize(2000);
+        grass.makeVisible();
+        }
+    }
+    
     /**
      * Draw this picture.
      */
@@ -51,13 +68,13 @@ public class Picture
 
         
         
-        wall1 = new Square();
-        wall1.moveHorizontal(-500);
-        wall1.moveVertical(130);
-        wall1.changeSize(120);
-        wall1.changeColor("green");
-        wall1.changeSize(2000);
-        wall1.makeVisible();
+        grass = new Square();
+        grass.moveHorizontal(-500);
+        grass.moveVertical(130);
+        grass.changeSize(120);
+        grass.changeColor("green");
+        grass.changeSize(2000);
+        grass.makeVisible();
         
         sun = new Circle();
         sun.changeColor("yellow");
@@ -68,7 +85,11 @@ public class Picture
         sun.slowMoveVertical(-190);
         
         
+        
+        
     }
+    
+    
 
     /**
      * Change this picture to black/white display
@@ -96,5 +117,11 @@ public class Picture
             roof.changeColor("green");
             sun.changeColor("yellow");
         }
+
+    
     }
+    
+    
+    
 }
+
